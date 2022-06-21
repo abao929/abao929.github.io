@@ -1,0 +1,58 @@
+@font-face 
+  font-family: helvetica-neue
+  font-weight: 100
+  src: url('./../fonts/HelveticaNeue\ Light.ttf')
+
+@font-face 
+  font-family: helvetica-neue
+  font-weight: 400
+  src: url('./../fonts/HelveticaNeue\ Medium.ttf')
+
+
+@font-face 
+  font-family: helvetica-neue
+  font-weight: 700
+  src: url('./../fonts/HelveticaNeue\ Bold.ttf')
+
+  
+  
+.landing-container
+  height: 100vh
+  width: 100vw
+  display: grid
+  grid-template-columns: 180px 1fr 180px
+  .personal-container, .portfolio-container
+    display: flex
+    align-items: center
+    justify-content: center
+    writing-mode: tb-rl
+    height: 100%
+    text-transform: uppercase
+    font: 400 128px adobe-garamond-pro
+  .personal-container
+    transform: rotate(-180deg)
+  .name-container
+    // background-color: orange
+    display: flex
+    justify-content: center
+    flex-direction: column
+    div
+      height: 120px
+      width: 100%
+      font: 400 120px helvetica-neue
+      display: flex
+      justify-content: center
+      .char
+        width: 96px
+        text-align: center
+        // &:nth-child(even)
+        //   background-color: red
+
+        // &:nth-child(odd)
+        //   background-color: blue
+// .red
+//   background-color: red
+// .blue
+//   background-color: blue
+// .green
+//   background-color: green

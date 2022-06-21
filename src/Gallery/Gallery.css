@@ -1,0 +1,79 @@
+.gallery-container {
+  background-color: #d3d3d3;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(7, 10.75vw);
+  align-content: center;
+  justify-content: center;
+}
+.gallery-container > * {
+  margin: 0.375vw;
+  height: 20.75vw;
+  width: 10vw;
+  display: flex;
+  flex-flow: column;
+}
+
+.v-split {
+  height: 10vw;
+  width: 10vw;
+  display: grid;
+  grid-template-columns: 1fr 0.75vw 1fr;
+}
+.v-split div {
+  height: 100%;
+  width: 100%;
+}
+.v-split div:nth-child(2) {
+  backgorund-color: #000;
+}
+
+.h-split {
+  height: 10vw;
+  width: 10vw;
+  display: grid;
+  grid-template-rows: 1fr 0.75vw 1fr;
+}
+.h-split div {
+  height: 100%;
+  width: 100%;
+}
+.h-split div:nth-child(1) {
+  backgorund-color: black;
+}
+
+.double {
+  justify-content: space-between;
+}
+
+.top {
+  align-items: flex-start;
+}
+
+.bot > * {
+  margin-top: auto;
+}
+
+.mid {
+  justify-content: center;
+}
+
+.orange {
+  background-color: #D9721F;
+}
+
+.white {
+  background-color: #fff;
+}
+
+.black {
+  background-color: #000;
+}
+
+@media (max-width: 768px) {
+  .gallery-container {
+    transform: rotate(90deg);
+  }
+}/*# sourceMappingURL=Gallery.css.map */

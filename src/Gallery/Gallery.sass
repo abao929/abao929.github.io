@@ -1,0 +1,67 @@
+$item-margin: .75vw
+$item-size: 10vw
+
+.gallery-container
+  background-color: #d3d3d3
+  box-sizing: border-box
+  height: 100vh
+  width: 100vw
+  display: grid
+  grid-template-columns: repeat(7, calc($item-size + $item-margin))
+  align-content: center
+  justify-content: center
+  & > *
+    margin: calc($item-margin / 2)
+    height: calc(2 * $item-size + $item-margin)
+    width: $item-size
+    display: flex
+    flex-flow: column
+
+.v-split
+  height: $item-size
+  width: $item-size
+  display: grid
+  grid-template-columns: 1fr $item-margin 1fr
+  div
+    height: 100%
+    width: 100%
+    &:nth-child(2)
+      backgorund-color: #000
+
+.h-split
+  height: $item-size
+  width: $item-size
+  display: grid
+  grid-template-rows: 1fr $item-margin 1fr
+  div
+    height: 100%
+    width: 100%
+    &:nth-child(1)
+      backgorund-color: black
+
+.double
+  justify-content: space-between
+
+.top
+  align-items: flex-start
+
+.bot
+  & > *
+    margin-top: auto
+
+.mid
+  justify-content: center
+
+.orange
+  background-color: #D9721F
+
+.white
+  background-color: #fff
+
+.black
+  background-color: #000
+
+
+@media (max-width: 768px)
+  .gallery-container
+    transform: rotate(90deg)
