@@ -1,17 +1,17 @@
 @font-face {
   font-family: helvetica-neue;
   font-weight: 100;
-  src: url("./../fonts/HelveticaNeue Light.ttf");
+  src: url('./../fonts/HelveticaNeue Light.ttf');
 }
 @font-face {
   font-family: helvetica-neue;
   font-weight: 400;
-  src: url("./../fonts/HelveticaNeue Medium.ttf");
+  src: url('./../fonts/HelveticaNeue Medium.ttf');
 }
 @font-face {
   font-family: helvetica-neue;
   font-weight: 700;
-  src: url("./../fonts/HelveticaNeue Bold.ttf");
+  src: url('./../fonts/HelveticaNeue Bold.ttf');
 }
 .landing-container {
   height: 100vh;
@@ -19,12 +19,13 @@
   display: grid;
   grid-template-columns: 180px 1fr 180px;
 }
-.landing-container .personal-container, .landing-container .portfolio-container {
+.landing-container .personal-container,
+.landing-container .portfolio-container {
   display: flex;
   align-items: center;
   justify-content: center;
   -ms-writing-mode: tb-rl;
-      writing-mode: tb-rl;
+  writing-mode: tb-rl;
   height: 100%;
   text-transform: uppercase;
   font: 400 128px adobe-garamond-pro;
@@ -40,11 +41,12 @@
 .landing-container .name-container div {
   height: 120px;
   width: 100%;
-  font: 400 120px helvetica-neue;
+  text-transform: uppercase;
+  font: 400 120px adobe-garamond-pro;
   display: flex;
   justify-content: center;
 }
 .landing-container .name-container div .char {
   width: 96px;
   text-align: center;
-}/*# sourceMappingURL=Landing.css.map */
+} /*# sourceMappingURL=Landing.css.map */
