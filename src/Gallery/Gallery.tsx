@@ -1,5 +1,5 @@
-import React from 'react';
-import './Gallery.sass';
+import React from 'react'
+import './Gallery.sass'
 
 export default function Gallery() {
   return (
@@ -65,5 +65,5 @@ export default function Gallery() {
         </div>
       </div>
     </div>
-  );
+  )
 }

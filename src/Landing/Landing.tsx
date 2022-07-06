@@ -1,5 +1,5 @@
-import React from 'react';
-import './Landing.sass';
+import React from 'react'
+import './Landing.sass'
 
 export default function Landing() {
   return (
@@ -22,5 +22,5 @@ export default function Landing() {
       </div>
       <div className="portfolio-container">Portfolio</div>
     </div>
-  );
+  )
 }
