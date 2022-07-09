@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 
 import styles from '../styles/project.module.sass'
+import styled from 'styled-components'
 
 interface ProjectProp {
   title: string
@@ -33,6 +34,35 @@ const useMousePosition = () => {
   return mousePosition
 }
 
+const MouseImage = styled.img`
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  max-width: 50vw;
+  max-height: 50vh;
+  object-fit: contain;
+  pointer-events: none;
+  z-index: 100;
+  &.active {
+    opacity: 1;
+  }
+`
+
+/* transform: translate(
+  ${mousePosition.x - imgOffset.x / 2}px,
+  ${mousePosition.y - imgOffset.y / 2}px
+); */
+
+const Panel = styled.div`
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  margin: 0 40px;
+`
+
+const PanelHeader = styled.div``
+
 // https://florentbiffi.com/ - use this for inspiration - on expanded change the video/demo into a slideshow component
 export default function Project({
   title,
@@ -46,23 +76,30 @@ export default function Project({
   const [active, setActive] = useState(false)
   const mousePosition = useMousePosition()
   const [imgOffset, setImgOffset] = useState<Position>({ x: 0, y: 0 })
+  const [dropdownHeight, setDropdownHeight] = useState(0)
   const onImgLoad = ({ target: img }: any) => {
     const { offsetHeight, offsetWidth } = img
-    console.log(offsetHeight)
-    console.log(offsetWidth)
     setImgOffset({ x: offsetWidth, y: offsetHeight })
   }
+  // const elementRef = useRef(null)
+  // useEffect(() => {
+  //   console.log(elementRef.current?.['clientHeight'])
+  //   let height: number = elementRef.current?.['clientHeight'] ?? 0
+  //   setDropdownHeight(height)
+  // }, [])
+
   // console.log(mousePosition)
   return (
     <>
-      <img
+      <MouseImage
         src={img}
         alt=""
-        className={`${styles.image} ${active && !expanded && styles.active}`}
+        className={active && !expanded ? 'active' : ''}
         style={{
-          transform: `translate(${mousePosition.x - imgOffset.x / 2}px, ${
-            mousePosition.y - imgOffset.y / 2
-          }px)`,
+          transform: `translate(
+          ${mousePosition.x - imgOffset.x / 2}px,
+          ${mousePosition.y - imgOffset.y / 2}px
+        )`,
         }}
         onLoad={onImgLoad}
       />
@@ -76,8 +113,12 @@ export default function Project({
           {title}
           <p>{`${number < 10 && 0}${number}`}</p>
         </div>
-        {expanded && (
-          <div>
+        <div className={styles.dropdownContainer}>
+          <div
+            className={styles.dropdown}
+            // ref={elementRef}
+            // style={{ height: `${expanded ? dropdownHeight : 'auto'}` }}
+          >
             <div className={styles.imgContainer}>
               <img src={img} alt="" />
             </div>
@@ -89,7 +130,7 @@ export default function Project({
               </div>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </>
   )
