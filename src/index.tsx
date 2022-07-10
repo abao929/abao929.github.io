@@ -22,20 +22,13 @@ root.render(
           path="project"
           element={
             <>
+              <Landing3 />
               <Project
                 title="huh"
                 number={1}
                 img={chobani}
                 year="2022"
-                desc="Nahel Moussi is a Freelance Product Designer. Discover her work on her new website."
-                link="huh"
-              />
-              <Project
-                title="what"
-                number={2}
-                img={chobani}
-                year="2022"
-                desc="Nahel Moussi is a Freelance Product Designer. Discover her work on her new website."
+                desc="This is just fodder work that I'm putting here for now"
                 link="huh"
               />
               <Project

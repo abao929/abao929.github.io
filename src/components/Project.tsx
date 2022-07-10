@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, Component } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 
 import styled from 'styled-components'
 
@@ -57,7 +57,7 @@ const Panel = styled.div`
 
 const PanelHeader = styled.div`
   cursor: pointer;
-  padding: 40px 0;
+  padding: 20px 0;
   display: flex;
   justify-content: space-between;
   font: 400 max(7vw, 4rem) scotch-display;
@@ -98,6 +98,34 @@ const PanelContent = styled.div`
     .description {
       & > *:first-child {
         padding-bottom: 20px;
+      }
+      a {
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding-bottom: 0.25em;
+      }
+      a:visited {
+        color: #0000ff;
+      }
+      a::after {
+        transform: translateX(-100%);
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: blue;
+        opacity: 0;
+        transition: all 0.3s;
+      }
+      a:hover::after,
+      a:focus::after {
+        opacity: 1;
+        transform: translateX(0);
       }
     }
   }
@@ -161,7 +189,7 @@ export default function Project({
             <div>{year}</div>
             <div className="description">
               <div>{desc}</div>
-              <a href={link}>VISIT FULL VERSION</a>
+              <a href={link}>Visit the full version</a>
             </div>
           </div>
         </PanelContent>
