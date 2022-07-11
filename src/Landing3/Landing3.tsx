@@ -22,14 +22,12 @@ export default function Landing3() {
         </div>
       </div>
       <div className={styles.top}>
-        Frontend <br />
-        Engineer
+        <div>Alex Bao</div>
       </div>
       <div className={styles.mid}></div>
       <div>
-        <div>Arrow</div>
-        <div></div>
-        <div>Alex Bao</div>
+        Front-end <br />
+        Developer
       </div>
     </div>
   )

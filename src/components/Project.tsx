@@ -38,10 +38,8 @@ const MouseImage = styled.img`
   opacity: 0;
   top: 0;
   left: 0;
-  width: auto;
+  width: 50vw;
   height: auto;
-  max-width: 50vw;
-  max-height: 50vh;
   object-fit: contain;
   pointer-events: none;
   z-index: 100;
@@ -52,7 +50,6 @@ const MouseImage = styled.img`
 
 const Panel = styled.div`
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-  margin: 0 40px;
 `
 
 const PanelHeader = styled.div`
