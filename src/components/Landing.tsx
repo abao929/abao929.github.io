@@ -1,4 +1,6 @@
 import React from 'react'
+
+import Underlay from './Underlay'
 import styled from 'styled-components'
 
 const StyledLanding = styled.div`
@@ -42,55 +44,55 @@ const StyledLanding = styled.div`
       }
     }
   }
-  .underlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    box-sizing: border-box;
+`
+
+const StyledUnderlay = styled(Underlay)`
+  padding: 0 clamp(20px, 2vw, 40px);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  div:nth-child(-n + 2) {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    div:nth-child(-n + 2) {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      font: 600 clamp(5rem, 24vw, 16rem) forma-djr-display;
-      text-transform: lowercase;
-      opacity: 0.05;
+    flex: 1;
+    font: 500 clamp(3rem, 14vw, 12rem) forma-djr-display;
+    text-transform: lowercase;
+    opacity: 0.05;
+    &:nth-child(1) {
+      justify-content: end;
+      align-items: flex-start;
+    }
+    &:nth-child(2) {
+      justify-content: start;
+      align-items: flex-end;
+    }
+    @media (max-width: 480px) {
       &:nth-child(1) {
-        justify-content: end;
-        align-items: flex-start;
+        align-items: center;
       }
       &:nth-child(2) {
-        justify-content: start;
-        align-items: flex-end;
-      }
-      @media (max-width: 480px) {
-        &:nth-child(1) {
-          justify-content: center;
-          align-items: center;
-        }
-        &:nth-child(2) {
-          justify-content: center;
-          align-items: center;
-        }
+        justify-content: center;
+        align-items: center;
       }
     }
-    .svg-container {
-      position: absolute;
-      bottom: clamp(20px, 4vh, 60px);
-      left: clamp(20px, 8vw, 80px);
-      height: clamp();
+  }
+  .svg-container {
+    position: absolute;
+    bottom: clamp(20px, 4vh, 60px);
+    left: clamp(20px, 8vw, 80px);
+    width: 50vw;
+    height: 60vh;
+    svg {
       width: auto;
       height: auto;
-      max-width: 50vw;
-      max-height: 60vh;
-      svg {
-        max-width: 100%;
-        max-height: 100%;
-      }
+      max-width: 100%;
+      max-height: 100%;
+    }
+    @media (max-width: 480px) {
+      position: relative;
+      left: 0;
+      margin: 0 auto;
     }
   }
 `
@@ -114,9 +116,9 @@ export default function Landing() {
           <div className="subtitle">+ clock and bell tower enthusiast</div>
         </div>
       </div>
-      <div className="underlay">
-        <div>Digital</div>
-        <div>Designer</div>
+      <StyledUnderlay>
+        <div>欢迎大家</div>
+        <div>我叫鲍骏成</div>
         <div className="svg-container">
           <svg
             width="100%"
@@ -132,7 +134,7 @@ export default function Landing() {
             />
           </svg>
         </div>
-      </div>
+      </StyledUnderlay>
     </StyledLanding>
   )
 }

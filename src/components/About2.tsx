@@ -22,7 +22,7 @@ const AboutContainer = styled.div`
   }
 `
 
-export default function About() {
+export default function About2() {
   return (
     <AboutContainer>
       <div className="image">
@@ -45,7 +45,6 @@ export default function About() {
         feedback or ideas or if you just want to talk... Been kinda lonely
         lately...
       </div>
-      <div className="underlay"></div>
     </AboutContainer>
   )
 }
