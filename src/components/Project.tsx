@@ -1,44 +1,14 @@
-import React, { useEffect, useState, useRef } from 'react'
+import { url } from 'inspector'
+import React, { useState, useRef } from 'react'
 
 import styled from 'styled-components'
-
-interface ProjectProp {
-  title: string
-  number: number
-  img: string
-  year: string
-  desc: string
-  link: string
-}
-
-interface Position {
-  x: number
-  y: number
-}
-
-const useMousePosition = () => {
-  const [mousePosition, setMousePosition] = useState<Position>({
-    x: 0,
-    y: 0,
-  })
-
-  useEffect(() => {
-    const updateMousePosition = (event: { clientX: any; clientY: any }) => {
-      setMousePosition({ x: event.clientX, y: event.clientY })
-    }
-    window.addEventListener('mousemove', updateMousePosition)
-
-    return () => window.removeEventListener('mousemove', updateMousePosition)
-  }, [])
-  return mousePosition
-}
 
 const MouseImage = styled.img`
   position: fixed;
   opacity: 0;
   top: 0;
   left: 0;
-  width: 50vw;
+  width: 42vw;
   height: auto;
   object-fit: contain;
   pointer-events: none;
@@ -57,9 +27,9 @@ const PanelHeader = styled.div`
   padding: 20px 0;
   display: flex;
   justify-content: space-between;
-  font: 400 max(7vw, 4rem) scotch-display;
+  font: 400 clamp(2rem, 6vw, 5rem) scotch-display;
   word-break: break-word;
-  text-transform: uppercase;
+  text-transform: lowercase;
   transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   &:hover {
     opacity: 0.5;
@@ -67,7 +37,9 @@ const PanelHeader = styled.div`
   p {
     margin-top: auto;
     color: rgba(150, 150, 150);
-    font: 500 1.5rem sans-serif;
+    font: 500 clamp(1.25rem, 1.5vw, 1.375rem) sans-serif;
+
+    /* font: 500 1.5rem sans-serif; */
   }
 `
 
@@ -137,12 +109,13 @@ export default function Project({
   number,
   img,
   year,
-  desc,
+  description,
   link,
-}: ProjectProp) {
+  x,
+  y,
+}: Project & Position) {
   const [expanded, toggleExpand] = useState(false)
   const [active, setActive] = useState(false)
-  const mousePosition = useMousePosition()
   const [imgOffset, setImgOffset] = useState<Position>({ x: 0, y: 0 })
   const onImgLoad = ({ target: img }: any) => {
     const { offsetHeight, offsetWidth } = img
@@ -153,13 +126,13 @@ export default function Project({
   return (
     <>
       <MouseImage
-        src={img}
+        src={require(`${img}`)}
         alt=""
         className={active && !expanded ? 'active' : ''}
         style={{
           transform: `translate(
-          ${mousePosition.x - imgOffset.x / 2}px,
-          ${mousePosition.y - imgOffset.y / 2}px
+          ${x - imgOffset.x / 2}px,
+          ${y - imgOffset.y / 2}px
         )`,
         }}
         onLoad={onImgLoad}
@@ -180,12 +153,12 @@ export default function Project({
           }}
         >
           <div className="image-container">
-            <img src={img} alt="" />
+            <img src={require(`${img}`)} alt="" />
           </div>
           <div className="text-container">
             <div>{year}</div>
             <div className="description">
-              <div>{desc}</div>
+              <div>{description}</div>
               <a href={link}>Visit the full version</a>
             </div>
           </div>
