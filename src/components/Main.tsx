@@ -1,12 +1,8 @@
 import React from 'react'
 import Landing3 from '../Landing3/Landing3'
 import About from './About'
-import Project from './Project'
+import Projects from './Projects'
 import Landing from './Landing'
-
-// Images
-import chobani from '../images/chobani-form.png'
-import a24 from '../images/a24-form.png'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -19,22 +15,7 @@ export default function Main() {
     <Container>
       <Landing />
       <About />
-      <Project
-        title="huh"
-        number={1}
-        img={chobani}
-        year="2022"
-        desc="This is just fodder work that I'm putting here for now"
-        link="huh"
-      />
-      <Project
-        title="going"
-        number={3}
-        img={a24}
-        year="2022"
-        desc="does this work."
-        link="huh"
-      />
+      <Projects />
     </Container>
   )
 }
