@@ -4,10 +4,13 @@ import Underlay from './Underlay'
 import styled from 'styled-components'
 
 const StyledLanding = styled.div`
+  /* border: 1px solid blue; */
   height: 100vh;
   width: 100%;
   box-sizing: border-box;
+  position: relative;
   .overlay {
+    /* border: 1px solid red; */
     width: 100%;
     box-sizing: border-box;
     text-align: right;
@@ -46,16 +49,17 @@ const StyledLanding = styled.div`
   }
 `
 
+// Abstract the title + subtitle into one component
+// Try a maximalist react background by using randomness - look at the murakami stuff. I can just randomize colors, size, and position to generate a svg background.
+
 const StyledUnderlay = styled(Underlay)`
-  padding: 0 clamp(20px, 2vw, 40px);
-  box-sizing: border-box;
-  display: flex;
+  max-height: 100vh;
   flex-direction: column;
   justify-content: space-around;
   div:nth-child(-n + 2) {
     display: flex;
     flex-direction: column;
-    flex: 1;
+    flex: 1 1 auto;
     font: 500 clamp(3rem, 14vw, 12rem) forma-djr-display;
     text-transform: lowercase;
     opacity: 0.05;
@@ -93,6 +97,7 @@ const StyledUnderlay = styled(Underlay)`
       position: relative;
       left: 0;
       margin: 0 auto;
+      height: 40vh;
     }
   }
 `
