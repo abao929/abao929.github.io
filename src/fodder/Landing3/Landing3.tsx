@@ -1,5 +1,4 @@
 import React from 'react'
-import Project from '../components/Project'
 import styles from './Landing3.module.sass'
 
 export default function Landing3() {
