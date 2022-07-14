@@ -27,9 +27,13 @@ const StyledLanding = styled.div`
       font: 500 clamp(2rem, 5vw, 3rem) scotch-display;
       text-transform: lowercase;
       .links {
-        font: 100 clamp(0.875rem, 2vw, 1.25rem) helvetica-neue;
-        text-transform: uppercase;
-        & span:nth-child(1) {
+        * {
+          font: 100 clamp(0.875rem, 2vw, 1.25rem) helvetica-neue;
+          color: black;
+          text-transform: uppercase;
+          text-decoration: none;
+        }
+        & > *:nth-child(1) {
           padding-right: clamp(0.5rem, 2vw, 2rem);
         }
       }
@@ -109,8 +113,12 @@ export default function Landing() {
         <div className="navbar">
           <span>Alex Bao</span>
           <div className="links">
-            <span>About</span>
-            <span>Work</span>
+            <a href="#about">
+              <span>About</span>
+            </a>
+            <a href="#projects">
+              <span>Work</span>
+            </a>
           </div>
         </div>
         <div className="text">
