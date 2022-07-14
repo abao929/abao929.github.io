@@ -8,10 +8,15 @@ const MouseImage = styled.img`
   opacity: 0;
   top: 0;
   left: 0;
-  width: 42vw;
+  width: auto;
   height: auto;
+  max-width: 40vw;
+  max-height: 50vh;
   object-fit: contain;
   pointer-events: none;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 7px 29px 0px;
+  transition: all 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
   z-index: 100;
   &.active {
     opacity: 1;
@@ -27,7 +32,7 @@ const PanelHeader = styled.div`
   padding: 20px 0;
   display: flex;
   justify-content: space-between;
-  font: 400 clamp(2rem, 6vw, 5rem) scotch-display;
+  font: 400 clamp(2rem, 5vw, 5rem) / 1em scotch-display;
   word-break: break-word;
   text-transform: lowercase;
   transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -52,8 +57,10 @@ const PanelContent = styled.div`
     justify-content: center;
     padding: clamp(30px, 10vh, 300px) clamp(40px, 10vw, 400px);
     img {
-      width: 100%;
+      width: auto;
       height: auto;
+      max-width: 100%;
+      max-height: 60vh;
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     }
   }
@@ -122,6 +129,9 @@ export default function Project({
     setImgOffset({ x: offsetWidth, y: offsetHeight })
   }
   const elementRef = useRef(null)
+  let linkText = link.includes('github')
+    ? 'Visit the repository'
+    : 'Visit the full version'
 
   return (
     <>
@@ -131,7 +141,7 @@ export default function Project({
         className={active && !expanded ? 'active' : ''}
         style={{
           transform: `translate(
-          ${x - imgOffset.x / 2}px,
+          ${x - imgOffset.x / 4}px,
           ${y - imgOffset.y / 2}px
         )`,
         }}
@@ -159,7 +169,11 @@ export default function Project({
             <div>{year}</div>
             <div className="description">
               <div>{description}</div>
-              <a href={link}>Visit the full version</a>
+              {link && (
+                <a href={link} target="_blank">
+                  {linkText}
+                </a>
+              )}
             </div>
           </div>
         </PanelContent>

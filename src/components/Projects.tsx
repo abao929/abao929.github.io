@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import styled from 'styled-components'
 
 import Project from './Project'
+import Underlay from './Underlay'
 
 const pathToImages = './assets/images/'
 
@@ -21,11 +23,37 @@ const useMousePosition = () => {
   return mousePosition
 }
 
+const StyledUnderlay = styled(Underlay)`
+  display: block;
+  font: 500 clamp(2rem, 10vw, 10rem) forma-djr-display;
+  opacity: 0.05;
+  text-align: center;
+`
+
+const ProjectsContainer = styled.div`
+  padding: clamp(1rem, 4vw, 8rem) 0;
+  position: relative;
+`
+
+const ProjectsTitle = styled.div`
+  font: 400 clamp(2rem, 7vw, 8rem) scotch-display;
+  text-transform: lowercase;
+  text-align: center;
+  padding-bottom: 0.5em;
+`
+
+const Wrapper = styled.div`
+  /* color: blue; */
+  & > div:first-of-type {
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+  }
+`
+
 export default function Projects() {
   const [projectData, setProjectData] = useState<Project[]>([])
   const mousePosition = useMousePosition()
   const getProjectData = () => {
-    fetch('temp.json')
+    fetch('projects.json')
       .then((response) => {
         return response.json()
       })
@@ -44,10 +72,14 @@ export default function Projects() {
   }, [])
 
   return (
-    <div>
-      {projectData.map((project, i) => (
-        <Project key={i} {...project} {...mousePosition} number={i} />
-      ))}
-    </div>
+    <ProjectsContainer id="projects">
+      <StyledUnderlay>项目</StyledUnderlay>
+      <ProjectsTitle>Projects</ProjectsTitle>
+      <Wrapper>
+        {projectData.map((project, i) => (
+          <Project key={i} {...project} {...mousePosition} number={i} />
+        ))}
+      </Wrapper>
+    </ProjectsContainer>
   )
 }
