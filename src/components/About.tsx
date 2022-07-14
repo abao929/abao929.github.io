@@ -5,9 +5,9 @@ import Underlay from './Underlay'
 const AboutContainer = styled.div`
   position: relative;
   /* border: 2px solid red; */
-  padding-top: clamp(1rem, 4vw, 8rem);
+  padding: clamp(1rem, 4vw, 8rem) 0;
   .image-text {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     padding: 0 clamp(1rem, 4vw, 4rem);
     display: flex;
     flex-direction: row;
@@ -17,7 +17,7 @@ const AboutContainer = styled.div`
       /* border: 1px solid blue; */
       margin: clamp(2rem, 8vh, 6rem) 0 0 clamp(1rem, 4vw, 3rem);
       flex: 1;
-      background: url(${require('./assets/images/chobani-form.png')}) center
+      background: url(${require('./assets/images/portrait.png')}) center
         no-repeat;
       background-size: auto 100%;
       @media (max-width: 992px) {
@@ -28,7 +28,7 @@ const AboutContainer = styled.div`
       /* border: 1px solid green; */
       flex: 1;
       .title {
-        font: 400 clamp(2rem, 7vw, 5rem) scotch-display;
+        font: 400 clamp(2rem, 7vw, 8rem) scotch-display;
         text-transform: lowercase;
         padding-bottom: 0.5em;
       }
@@ -47,11 +47,8 @@ const StyledUnderlay = styled(Underlay)`
 
 export default function About() {
   return (
-    <AboutContainer>
+    <AboutContainer id="about">
       <div className="image-text">
-        {/* <div className="image">
-          <img src={} alt="" />
-        </div> */}
         <div className="text">
           <div className="title">About Me</div>
           <div className="subtitle">
@@ -70,8 +67,8 @@ export default function About() {
             especially about responsive design, media queries, and proper
             clamping techniques. Also please let me know if you're a recruiter
             looking at this because I have no idea if people actually look at
-            this. Feel free to reach out to me at alexander_bao@brown.edu if you
-            have any feedback, ideas or if you just want to talk...
+            this. Feel free to <a href="#contact">reach out to me,</a>
+            if you have any feedback, ideas or if you just want to talk...
           </div>
         </div>
         <span className="image" />
