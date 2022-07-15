@@ -33,8 +33,12 @@ const StyledLanding = styled.div`
           color: black;
           text-transform: uppercase;
           text-decoration: none;
+          transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+          &:hover {
+            opacity: 0.5;
+          }
         }
-        & > *:nth-child(1) {
+        & > *:not(:last-child) {
           padding-right: clamp(0.5rem, 2vw, 2rem);
         }
       }
@@ -113,6 +117,9 @@ export default function Landing() {
             </a>
             <a href="#projects">
               <span>Work</span>
+            </a>
+            <a href="#contact">
+              <span>Contact</span>
             </a>
           </div>
         </div>

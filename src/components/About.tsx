@@ -35,6 +35,9 @@ const AboutContainer = styled.div`
       .body {
         padding-left: clamp(1rem, 4vw, 3rem);
         font: 300 clamp(1rem, 1.25vw, 1.5rem) / 1.5em sans-serif;
+        a:visited {
+          color: #000;
+        }
       }
     }
   }

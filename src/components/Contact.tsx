@@ -73,7 +73,7 @@ const LinkWrapper = styled.div`
 
 export default function Contact() {
   return (
-    <ContactContainer>
+    <ContactContainer id="contact">
       <ContactTitle>
         <Title
           titleText="Contact Me"
@@ -104,7 +104,7 @@ export default function Contact() {
           >
             Résumé
           </a>
-          <div>Hire me lol</div>
+          <div>If you're a recruiter, please hire me lol</div>
         </LinkWrapper>
         <LinkWrapper>
           <a

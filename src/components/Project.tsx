@@ -64,11 +64,14 @@ const PanelContent = styled.div`
     }
   }
   .text-container {
-    padding: 40px 0;
+    padding: 20px 0;
     display: flex;
     flex-direction: row;
     & > * {
       flex: 1;
+    }
+    @media (max-width: 480px) {
+      flex-direction: column;
     }
     .description {
       & > *:first-child {
