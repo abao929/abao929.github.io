@@ -73,6 +73,10 @@ const PanelContent = styled.div`
     @media (max-width: 480px) {
       flex-direction: column;
     }
+    .year {
+      font-weight: 500;
+      padding-bottom: 1em;
+    }
     .description {
       & > *:first-child {
         padding-bottom: 20px;
@@ -168,7 +172,7 @@ export default function Project({
             <img src={require(`${img}`)} alt="" />
           </div>
           <div className="text-container">
-            <div>{year}</div>
+            <div className="year">{year}</div>
             <div className="description">
               <div>{description}</div>
               {link && (
