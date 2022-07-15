@@ -43,7 +43,6 @@ const ProjectsTitle = styled.div`
 `
 
 const Wrapper = styled.div`
-  /* color: blue; */
   & > div:first-of-type {
     border-top: 1px solid rgba(0, 0, 0, 0.3);
   }
@@ -73,7 +72,7 @@ export default function Projects() {
 
   return (
     <ProjectsContainer id="projects">
-      <StyledUnderlay>项目</StyledUnderlay>
+      <StyledUnderlay>项目简介</StyledUnderlay>
       <ProjectsTitle>Projects</ProjectsTitle>
       <Wrapper>
         {projectData.map((project, i) => (

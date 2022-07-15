@@ -2,6 +2,7 @@ import React from 'react'
 import About from './About'
 import Projects from './Projects'
 import Landing from './Landing'
+import Contact from './Contact'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -24,6 +25,7 @@ export default function Main() {
       <Landing />
       <About />
       <Projects />
+      <Contact />
     </Container>
   )
 }

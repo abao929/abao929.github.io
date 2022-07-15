@@ -1,4 +1,3 @@
-import { url } from 'inspector'
 import React, { useState, useRef } from 'react'
 
 import styled from 'styled-components'
@@ -15,7 +14,8 @@ const MouseImage = styled.img`
   object-fit: contain;
   pointer-events: none;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 7px 29px 0px;
-  transition: all 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  /* transition: all 0.3s cubic-bezier(0.17, 0.67, 0.83, 0.67); */
+  transition: all 0.35s ease-out;
   /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
   z-index: 100;
   &.active {
@@ -43,14 +43,13 @@ const PanelHeader = styled.div`
     margin-top: auto;
     color: rgba(150, 150, 150);
     font: 500 clamp(1.25rem, 1.5vw, 1.375rem) sans-serif;
-
-    /* font: 500 1.5rem sans-serif; */
   }
 `
 
 const PanelContent = styled.div`
   overflow: hidden;
-  transition: all 0.6s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  /* transition: all 1s cubic-bezier(0.17, 0.67, 0.83, 0.67); */
+  transition: all 1s ease-in-out;
   .image-container {
     background-color: #f0f0f0;
     display: flex;

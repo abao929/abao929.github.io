@@ -2,6 +2,7 @@ import React from 'react'
 
 import Underlay from './Underlay'
 import styled from 'styled-components'
+import Title from './Title'
 
 const StyledLanding = styled.div`
   /* border: 1px solid blue; */
@@ -42,12 +43,6 @@ const StyledLanding = styled.div`
       margin-top: 4rem;
       @media (max-width: 480px) {
         margin-top: 8rem;
-      }
-      .title {
-        font: 400 clamp(2rem, 7vw, 5rem) scotch-display;
-      }
-      .subtitle {
-        font: 100 clamp(1rem, 2vw, 2rem) helvetica-neue;
       }
     }
   }
@@ -122,11 +117,10 @@ export default function Landing() {
           </div>
         </div>
         <div className="text">
-          <div className="title">
-            front-end developer & <br />
-            student at brown
-          </div>
-          <div className="subtitle">+ clock and bell tower enthusiast</div>
+          <Title
+            titleText={`front-end developer\n& student at brown`}
+            subtitleText="+ clock and bell tower enthusiast"
+          />
         </div>
       </div>
       <StyledUnderlay>

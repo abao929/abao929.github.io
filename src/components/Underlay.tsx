@@ -12,6 +12,6 @@ const Container = styled.div`
   z-index: -1;
 `
 
-export default function Underlay({ className, children, ...props }: any) {
+export default function Underlay({ className, children }: any) {
   return <Container className={className}>{children}</Container>
 }

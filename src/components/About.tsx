@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Title from './Title'
 import Underlay from './Underlay'
 
 const AboutContainer = styled.div`
@@ -27,16 +28,22 @@ const AboutContainer = styled.div`
     .text {
       /* border: 1px solid green; */
       flex: 1;
-      .title {
+      /* .title-container {
         font: 400 clamp(2rem, 7vw, 8rem) scotch-display;
         text-transform: lowercase;
-        padding-bottom: 0.5em;
-      }
-      .subtitle {
+      } */
+      .body {
         padding-left: clamp(1rem, 4vw, 3rem);
         font: 300 clamp(1rem, 1.25vw, 1.5rem) / 1.5em sans-serif;
       }
     }
+  }
+`
+
+const StyledTitle = styled(Title)`
+  padding-bottom: 1em;
+  .subtitle {
+    padding-left: 1em;
   }
 `
 
@@ -50,8 +57,8 @@ export default function About() {
     <AboutContainer id="about">
       <div className="image-text">
         <div className="text">
-          <div className="title">About Me</div>
-          <div className="subtitle">
+          <StyledTitle titleText="about me" subtitleText="a brief summary" />
+          <div className="body">
             Hey I'm a junior at Brown University studying computer science. I'm
             passionate about front-end design and development. I'm currently a
             front-end engineering intern at Morphic, and am looking for

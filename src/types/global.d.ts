@@ -14,4 +14,10 @@ declare global {
     x: number
     y: number
   }
+
+  interface Font {
+    weight: number
+    size: string
+    family: string
+  }
 }
