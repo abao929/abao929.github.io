@@ -1,4 +1,4 @@
-import React from 'react'
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
 import Title from './Title'
 import Underlay from './Underlay'
@@ -71,17 +71,31 @@ const LinkWrapper = styled.div`
   }
 `
 
+const MotionLink = motion(LinkWrapper)
+
 export default function Contact() {
   return (
     <ContactContainer id="contact">
-      <ContactTitle>
-        <Title
-          titleText="Contact Me"
-          subtitleText="please reach out I'm getting lonely out here"
-        />
-      </ContactTitle>
+      <motion.div
+        initial={{ opacity: 0 }}
+        transition={{ delay: 0.25, duration: 1 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
+        <ContactTitle>
+          <Title
+            titleText="Contact Me"
+            subtitleText="please reach out I'm getting lonely out here"
+          />
+        </ContactTitle>
+      </motion.div>
       <ContactContent>
-        <LinkWrapper>
+        <MotionLink
+          initial={{ opacity: 0, x: -50 }}
+          transition={{ delay: 0.25, duration: 1 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+        >
           <a href="https://www.linkedin.com/in/alex-bao/" target="_blank">
             LinkedIn
           </a>
@@ -89,15 +103,25 @@ export default function Contact() {
             Add me
             <br /> I lowkey need to expand my network
           </div>
-        </LinkWrapper>
-        <LinkWrapper>
+        </MotionLink>
+        <MotionLink
+          initial={{ opacity: 0, x: -50 }}
+          transition={{ delay: 0.25, duration: 1 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+        >
           <a href="mailto:alexander_bao@brown.edu">Email</a>
           <div>
             Not sure if the mail link works <br />
             My email is alexander_bao@brown.edu
           </div>
-        </LinkWrapper>
-        <LinkWrapper>
+        </MotionLink>
+        <MotionLink
+          initial={{ opacity: 0, x: -50 }}
+          transition={{ delay: 0.25, duration: 1 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+        >
           <a
             href="https://docs.google.com/file/d/1ZrYRPF4IyXtiuhcH4dc8jcnG7tLdQVwEjm9s7L3FJHo/view"
             target="_blank"
@@ -105,8 +129,13 @@ export default function Contact() {
             Résumé
           </a>
           <div>If you're a recruiter, please hire me lol</div>
-        </LinkWrapper>
-        <LinkWrapper>
+        </MotionLink>
+        <MotionLink
+          initial={{ opacity: 0, x: -50 }}
+          transition={{ delay: 0.25, duration: 0.75 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+        >
           <a
             href="https://open.spotify.com/user/abao20?si=8ec0bab531554336"
             target="_blank"
@@ -115,9 +144,16 @@ export default function Contact() {
             Spotify
           </a>
           <div>I don't know what else to plug</div>
-        </LinkWrapper>
+        </MotionLink>
       </ContactContent>
-      <StyledUnderlay>联系方式</StyledUnderlay>
+      <motion.div
+        initial={{ opacity: 0 }}
+        transition={{ delay: 0.25, duration: 1 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
+        <StyledUnderlay>联系方式</StyledUnderlay>
+      </motion.div>
     </ContactContainer>
   )
 }

@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 import Project from './Project'
@@ -72,8 +73,15 @@ export default function Projects() {
 
   return (
     <ProjectsContainer id="projects">
-      <StyledUnderlay>项目简介</StyledUnderlay>
-      <ProjectsTitle>Projects</ProjectsTitle>
+      <motion.div
+        initial={{ opacity: 0 }}
+        transition={{ delay: 0.25, duration: 1 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
+        <StyledUnderlay>项目简介</StyledUnderlay>
+        <ProjectsTitle>Projects</ProjectsTitle>
+      </motion.div>
       <Wrapper>
         {projectData.map((project, i) => (
           <Project key={i} {...project} {...mousePosition} number={i} />

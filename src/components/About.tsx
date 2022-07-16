@@ -1,21 +1,18 @@
-import React from 'react'
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
 import Title from './Title'
 import Underlay from './Underlay'
 
 const AboutContainer = styled.div`
   position: relative;
-  /* border: 2px solid red; */
   padding: clamp(1rem, 4vw, 8rem) 0;
   .image-text {
-    /* border: 2px solid red; */
     padding: 0 clamp(1rem, 4vw, 4rem);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     max-width: 100%;
     .image {
-      /* border: 1px solid blue; */
       margin: clamp(2rem, 8vh, 6rem) 0 0 clamp(1rem, 4vw, 3rem);
       flex: 1;
       background: url(${require('./assets/images/portrait.png')}) center
@@ -26,12 +23,7 @@ const AboutContainer = styled.div`
       }
     }
     .text {
-      /* border: 1px solid green; */
       flex: 1;
-      /* .title-container {
-        font: 400 clamp(2rem, 7vw, 8rem) scotch-display;
-        text-transform: lowercase;
-      } */
       .body {
         padding-left: clamp(1rem, 4vw, 3rem);
         font: 300 clamp(1rem, 1.25vw, 1.5rem) / 1.5em sans-serif;
@@ -60,8 +52,21 @@ export default function About() {
     <AboutContainer id="about">
       <div className="image-text">
         <div className="text">
-          <StyledTitle titleText="about me" subtitleText="a brief summary" />
-          <div className="body">
+          <motion.div
+            initial={{ opacity: 0 }}
+            transition={{ delay: 0.25, duration: 1 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            <StyledTitle titleText="about me" subtitleText="a brief summary" />
+          </motion.div>
+          <motion.div
+            className="body"
+            initial={{ opacity: 0, x: -30 }}
+            transition={{ delay: 0.5, duration: 1 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
             Hey I'm a junior at Brown University studying computer science. I'm
             passionate about front-end design and development. I'm currently a
             front-end engineering intern at Morphic, and am looking for
@@ -79,12 +84,25 @@ export default function About() {
             looking at this because I have no idea if people actually look at
             this. Feel free to <a href="#contact">reach out to me,</a>
             if you have any feedback, ideas or if you just want to talk...
-          </div>
+          </motion.div>
         </div>
-        <span className="image" />
+        <motion.span
+          className="image"
+          initial={{ opacity: 0, x: 30 }}
+          transition={{ delay: 0.5, duration: 1 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+        />
       </div>
 
-      <StyledUnderlay>个人简介</StyledUnderlay>
+      <motion.div
+        initial={{ opacity: 0 }}
+        transition={{ delay: 0.25, duration: 1 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
+        <StyledUnderlay>个人简介</StyledUnderlay>
+      </motion.div>
     </AboutContainer>
   )
 }

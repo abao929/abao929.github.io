@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react'
-
+import { motion } from 'framer-motion'
+import { useState, useRef } from 'react'
 import styled from 'styled-components'
 
 const MouseImage = styled.img`
@@ -20,12 +20,17 @@ const MouseImage = styled.img`
   z-index: 100;
   &.active {
     opacity: 1;
+    @media (max-width: 480px) {
+      opacity: 0;
+    }
   }
 `
 
 const Panel = styled.div`
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 `
+
+const MotionPanel = motion(Panel)
 
 const PanelHeader = styled.div`
   cursor: pointer;
@@ -153,7 +158,12 @@ export default function Project({
         }}
         onLoad={onImgLoad}
       />
-      <Panel>
+      <MotionPanel
+        initial={{ opacity: 0, y: 50 }}
+        transition={{ delay: 0.25, duration: 0.5 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
         <PanelHeader
           onClick={() => toggleExpand(!expanded)}
           onMouseEnter={() => setActive(true)}
@@ -183,7 +193,7 @@ export default function Project({
             </div>
           </div>
         </PanelContent>
-      </Panel>
+      </MotionPanel>
     </>
   )
 }
