@@ -80,9 +80,8 @@ export default function About() {
             Since no one really teaches CSS at school, most of what I have
             learned in that regard is self-studied, so please give me feedback,
             especially about responsive design, media queries, and proper
-            clamping techniques. Also please let me know if you're a recruiter
-            looking at this because I have no idea if people actually look at
-            this. Feel free to <a href="#contact">reach out to me,</a>
+            clamping techniques. Feel free to
+            <a href="#contact">reach out to me,</a>
             if you have any feedback, ideas or if you just want to talk...
           </motion.div>
         </div>

@@ -128,7 +128,7 @@ export default function Contact() {
           >
             Résumé
           </a>
-          <div>If you're a recruiter, please hire me lol</div>
+          <div>Please email me for a transcript</div>
         </MotionLink>
         <MotionLink
           initial={{ opacity: 0, x: -50 }}

@@ -5,6 +5,7 @@ import Landing from './fodder/Landing/Landing'
 import Gallery from './fodder/Gallery/Gallery'
 import Landing2 from './fodder/Landing2/Landing2'
 import Landing3 from './fodder/Landing3/Landing3'
+import Wat from './fodder/Gallery/Wat'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Main from './components/Main'
 
@@ -15,7 +16,7 @@ root.render(
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="gallery" element={<Gallery />} />
-        <Route path="test" element={<Landing3 />} />
+        <Route path="test" element={<Wat />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
