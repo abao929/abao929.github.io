@@ -77,12 +77,11 @@ export default function About() {
             not going too great. I'm also trying to develop a better eye for
             design so send me interesting artwork/designs that you enjoy.
             <br /> <br />
-            Since no one really teaches CSS at school, most of what I have
-            learned in that regard is self-studied, so please give me feedback,
-            especially about responsive design, media queries, and proper
-            clamping techniques. Feel free to
-            <a href="#contact">reach out to me,</a>
-            if you have any feedback, ideas or if you just want to talk...
+            Most of what I have learned with respect to CSS is self-taught, so
+            please give me feedback, especially about responsive design, media
+            queries, and proper clamp usage. Feel free to{' '}
+            <a href="#contact">reach out to me,</a> if you have any feedback,
+            ideas or if you just want to talk...
           </motion.div>
         </div>
         <motion.span

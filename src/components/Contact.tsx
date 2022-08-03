@@ -85,7 +85,7 @@ export default function Contact() {
         <ContactTitle>
           <Title
             titleText="Contact Me"
-            subtitleText="please reach out I'm getting lonely out here"
+            subtitleText="down to just talk about whatever"
           />
         </ContactTitle>
       </motion.div>
@@ -101,7 +101,8 @@ export default function Contact() {
           </a>
           <div>
             Add me
-            <br /> I lowkey need to expand my network
+            <br />
+            Lowkey need to expand my network
           </div>
         </MotionLink>
         <MotionLink
@@ -112,7 +113,8 @@ export default function Contact() {
         >
           <a href="mailto:alexander_bao@brown.edu">Email</a>
           <div>
-            Not sure if the mail link works <br />
+            Not sure if the mail link works
+            <br />
             My email is alexander_bao@brown.edu
           </div>
         </MotionLink>
@@ -128,7 +130,7 @@ export default function Contact() {
           >
             Résumé
           </a>
-          <div>Please email me for a transcript</div>
+          <div>Will send transcript upon request</div>
         </MotionLink>
         <MotionLink
           initial={{ opacity: 0, x: -50 }}
