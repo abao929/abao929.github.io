@@ -1,7 +1,7 @@
-import { motion } from 'framer-motion'
-import styled from 'styled-components'
-import Title from './Title'
-import Underlay from './Underlay'
+import { motion } from "framer-motion"
+import styled from "styled-components"
+import Title from "./Title"
+import Underlay from "./Underlay"
 
 const ContactContainer = styled.div`
   position: relative;
@@ -51,7 +51,7 @@ const LinkWrapper = styled.div`
   }
   a::after {
     transform: translateX(-100%);
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
@@ -139,11 +139,11 @@ export default function Contact() {
           viewport={{ once: true }}
         >
           <a
-            href="https://open.spotify.com/user/abao20?si=8ec0bab531554336"
+            href="https://github.com/abao929"
             target="_blank"
             className="header"
           >
-            Spotify
+            GitHub
           </a>
           <div>I don't know what else to plug</div>
         </MotionLink>
