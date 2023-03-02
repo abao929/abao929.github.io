@@ -49,19 +49,19 @@ const StyledUnderlay = styled(Underlay)`
 
 export default function About() {
   return (
-    <AboutContainer id="about">
-      <div className="image-text">
-        <div className="text">
+    <AboutContainer id='about'>
+      <div className='image-text'>
+        <div className='text'>
           <motion.div
             initial={{ opacity: 0 }}
             transition={{ delay: 0.25, duration: 1 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <StyledTitle titleText="about me" subtitleText="a brief summary" />
+            <StyledTitle titleText='about me' subtitleText='a brief summary' />
           </motion.div>
           <motion.div
-            className="body"
+            className='body'
             initial={{ opacity: 0, x: -30 }}
             transition={{ delay: 0.5, duration: 1 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -80,12 +80,12 @@ export default function About() {
             Most of what I have learned with respect to CSS is self-taught, so
             please give me feedback, especially about responsive design, media
             queries, and proper clamp usage. Feel free to{' '}
-            <a href="#contact">reach out to me,</a> if you have any feedback,
+            <a href='#contact'>reach out to me,</a> if you have any feedback,
             ideas or if you just want to talk...
           </motion.div>
         </div>
         <motion.span
-          className="image"
+          className='image'
           initial={{ opacity: 0, x: 30 }}
           transition={{ delay: 0.5, duration: 1 }}
           whileInView={{ opacity: 1, x: 0 }}
