@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.1dc8ea1e.css",
-    "main.js": "/static/js/main.5a8edf5d.js",
+    "main.css": "/static/css/main.e4813f0b.css",
+    "main.js": "/static/js/main.8a5fd049.js",
+    "static/media/portrait.png": "/static/media/portrait.e0207688fc23aab5ab45.png",
     "static/media/spotilyze.png": "/static/media/spotilyze.d37138f012f6f42a369a.png",
     "static/media/old-site2.png": "/static/media/old-site2.79421870d40af2125c54.png",
-    "static/media/portrait.png": "/static/media/portrait.741b286404e30cdada7e.png",
     "static/media/a24-form.png": "/static/media/a24-form.2a1a8a44300c94ef4021.png",
     "static/media/chobani-form.png": "/static/media/chobani-form.ed391fa1d90ebc99bf18.png",
     "static/media/bao.png": "/static/media/bao.14ecd1dd86399591327e.png",
@@ -17,11 +17,11 @@
     "static/media/HelveticaNeue Bold.ttf": "/static/media/HelveticaNeue Bold.61acdee6f288cddccf23.ttf",
     "static/media/old-site.png": "/static/media/old-site.d9395fce0d38b48ac37e.png",
     "index.html": "/index.html",
-    "main.1dc8ea1e.css.map": "/static/css/main.1dc8ea1e.css.map",
-    "main.5a8edf5d.js.map": "/static/js/main.5a8edf5d.js.map"
+    "main.e4813f0b.css.map": "/static/css/main.e4813f0b.css.map",
+    "main.8a5fd049.js.map": "/static/js/main.8a5fd049.js.map"
   },
   "entrypoints": [
-    "static/css/main.1dc8ea1e.css",
-    "static/js/main.5a8edf5d.js"
+    "static/css/main.e4813f0b.css",
+    "static/js/main.8a5fd049.js"
   ]
 }
