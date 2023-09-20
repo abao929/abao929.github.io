@@ -1,7 +1,7 @@
-import { motion } from "framer-motion"
-import styled from "styled-components"
-import Title from "./Title"
-import Underlay from "./Underlay"
+import { motion } from 'framer-motion'
+import styled from 'styled-components'
+import Title from './Title'
+import Underlay from './Underlay'
 
 const ContactContainer = styled.div`
   position: relative;
@@ -51,7 +51,7 @@ const LinkWrapper = styled.div`
   }
   a::after {
     transform: translateX(-100%);
-    content: "";
+    content: '';
     position: absolute;
     bottom: 0;
     left: 0;
@@ -75,7 +75,7 @@ const MotionLink = motion(LinkWrapper)
 
 export default function Contact() {
   return (
-    <ContactContainer id="contact">
+    <ContactContainer id='contact'>
       <motion.div
         initial={{ opacity: 0 }}
         transition={{ delay: 0.25, duration: 1 }}
@@ -84,8 +84,8 @@ export default function Contact() {
       >
         <ContactTitle>
           <Title
-            titleText="Contact Me"
-            subtitleText="down to just talk about whatever"
+            titleText='Contact Me'
+            subtitleText='down to just talk about whatever'
           />
         </ContactTitle>
       </motion.div>
@@ -96,14 +96,10 @@ export default function Contact() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
         >
-          <a href="https://www.linkedin.com/in/alex-bao/" target="_blank">
+          <a href='https://www.linkedin.com/in/alex-bao/' target='_blank'>
             LinkedIn
           </a>
-          <div>
-            Add me
-            <br />
-            Lowkey need to expand my network
-          </div>
+          <div>The more connections the merrier</div>
         </MotionLink>
         <MotionLink
           initial={{ opacity: 0, x: -50 }}
@@ -111,12 +107,8 @@ export default function Contact() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
         >
-          <a href="mailto:alexander_bao@brown.edu">Email</a>
-          <div>
-            Not sure if the mail link works
-            <br />
-            My email is alexander_bao@brown.edu
-          </div>
+          <a href='mailto:alexander_bao@brown.edu'>Email</a>
+          <div>My email is alexander_bao@brown.edu</div>
         </MotionLink>
         <MotionLink
           initial={{ opacity: 0, x: -50 }}
@@ -125,8 +117,8 @@ export default function Contact() {
           viewport={{ once: true }}
         >
           <a
-            href="https://docs.google.com/file/d/1ZrYRPF4IyXtiuhcH4dc8jcnG7tLdQVwEjm9s7L3FJHo/view"
-            target="_blank"
+            href='https://docs.google.com/file/d/1ZrYRPF4IyXtiuhcH4dc8jcnG7tLdQVwEjm9s7L3FJHo/view'
+            target='_blank'
           >
             Résumé
           </a>
@@ -139,9 +131,9 @@ export default function Contact() {
           viewport={{ once: true }}
         >
           <a
-            href="https://github.com/abao929"
-            target="_blank"
-            className="header"
+            href='https://github.com/abao929'
+            target='_blank'
+            className='header'
           >
             GitHub
           </a>

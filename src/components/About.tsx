@@ -67,15 +67,15 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            Hey I'm a junior at Brown University studying computer science. I'm
-            passionate about front-end design and development. I'm currently a
-            front-end engineering intern at Morphic, and am looking for
-            internship opportunities for the summer of 2023.
+            Hey I'm a senior at Brown University studying computer science. I'm
+            passionate about front-end design and development. I've been a
+            front-end dev intern at Morphic and analyst intern at Hel Ved
+            Capital. I'm currently looking for full time opportunities as a
+            software engineer.
             <br /> <br />
-            Outside of work, I enjoy eating, watching F1, and playing a
-            multitude of sports poorly. I've been learning to cook though it's
-            not going too great. I'm also trying to develop a better eye for
-            design so send me interesting artwork/designs that you enjoy.
+            Outside of work, I enjoy cooking though it's not going too great.
+            I'm also trying to develop a better eye for design so send me
+            interesting artwork/designs that you enjoy.
             <br /> <br />
             Most of what I have learned with respect to CSS is self-taught, so
             please give me feedback, especially about responsive design, media
