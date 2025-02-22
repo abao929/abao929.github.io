@@ -6,6 +6,4 @@ const nextConfig = {
   basePath: '', // Ensures it's served at alexbao.net
 }
 
-module.exports = nextConfig
-
 export default nextConfig
