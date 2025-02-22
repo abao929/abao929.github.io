@@ -1,0 +1,58 @@
+[
+  {
+    "title": "Chobani Form",
+    "year": "2022",
+    "img": "chobani-form.png",
+    "description": "Part of a Case Study on login forms. I took inspiration from different brand images/colors, in this case the font Chobani uses since it has cropped up a lot in other designs I have seen. This was one of my favorite because I learned a lot using the input:focus, input:invalid, input[type] selectors and combining those with label selectors to create simple animations",
+    "link": ""
+  },
+  {
+    "title": "A24 Form",
+    "year": "2022",
+    "img": "a24-form.png",
+    "description": "Part of a Case Study on login forms. This time I took inspiration from the A24 website as I had just watched one of their films. I wanted to focus on designing this in Figma beforehand to gain more experience using the tool and to follow a better design flow. The main goals were to focus on black and white, as well as having a different layout than splitting a page vertically into two halves. Learned a lot from using SVGs for the middle portion, mainly that having lots of lines in an SVG, unsurprisingly, leads to slow rendering.",
+    "link": ""
+  },
+  {
+    "title": "Old Site",
+    "year": "2021",
+    "img": "old-site.png",
+    "description": "This is what the old-site looked like. I built this what felt like ages ago though in reality it was at most a year ago. This was when I was trying to get more comfortable with CSS and JavaScript.",
+    "link": "https://alexbao.net/personal-site/"
+  },
+  {
+    "title": "Old Site Pt. 2",
+    "year": "2022",
+    "img": "old-site2.png",
+    "description": "This was another iteration of my personal site. I saw a friend's personal site they built using cargo and tried to replicate it in a day, which is a stupid idea. Focused on responsive design using CSS grids. It turned out pretty well. At this point this site you're looking at is just going to be another project listing in an endless string of refactors.",
+    "link": "https://alexbao.net/personal-site/html/remake.html"
+  },
+  {
+    "title": "Field Day",
+    "year": "2022",
+    "img": "field-day.png",
+    "description": "A simple website I built for some event I was hosting for my friends. Practicing grid and responsive design in general. Honestly not a huge fan of the design now but the resizing part was solid.",
+    "link": "https://alexbao.net/personal-site/html/field-day.html"
+  },
+  {
+    "title": "Lucidity",
+    "year": "2022",
+    "img": "lucidity.png",
+    "description": "A text message analysis platform I built with a few friends. A user can upload their text message data and see a summary of it, similar to spotify wrapped. I mainly worked on the front end, specifically the log in, upload, and a couple of the analysis pages. Web app was built using Python and Flask for the backend and React with TypeScript for the frontend.",
+    "link": ""
+  },
+  {
+    "title": "Spotilyze",
+    "year": "2020",
+    "img": "spotilyze.png",
+    "description": "I did a few data science projects in Python using Spotify's api. The image above is of my favorite part of the project. The script takes a playlist link and converts it into a mosaic of images sorted by color. The predominant color is found using KMeans clustering on the HSV values of each pixel and then sorted by hue horizontally, and saturation vertically.",
+    "link": "https://github.com/abao929/spotify"
+  },
+  {
+    "title": "Frees with Friends",
+    "year": "2019",
+    "img": "fwf.png",
+    "description": "My first time properly building out a webapp. I built a social media like website for my high school so that students could add each other and compare course schedules. I built this using PHP and some JavaScript. Featured a login component and functionality to add friends. Schedule and log in data was stored and fetched using SQL.",
+    "link": "https://github.com/abao929/fwf"
+  }
+]

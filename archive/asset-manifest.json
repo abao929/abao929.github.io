@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f3b002c8.css",
+    "main.js": "/static/js/main.acdd4f5e.js",
+    "static/media/portrait.png": "/static/media/portrait.e0207688fc23aab5ab45.png",
+    "static/media/spotilyze.png": "/static/media/spotilyze.d37138f012f6f42a369a.png",
+    "static/media/old-site2.png": "/static/media/old-site2.79421870d40af2125c54.png",
+    "static/media/a24-form.png": "/static/media/a24-form.2a1a8a44300c94ef4021.png",
+    "static/media/chobani-form.png": "/static/media/chobani-form.ed391fa1d90ebc99bf18.png",
+    "static/media/bao.png": "/static/media/bao.14ecd1dd86399591327e.png",
+    "static/media/fwf.png": "/static/media/fwf.5de70a58862439aae94c.png",
+    "static/media/field-day.png": "/static/media/field-day.6b52b672ee33ae870fb0.png",
+    "static/media/lucidity2.png": "/static/media/lucidity2.93541201601e41c90226.png",
+    "static/media/lucidity.png": "/static/media/lucidity.7f426a4346b716a5791f.png",
+    "static/media/HelveticaNeue Light.ttf": "/static/media/HelveticaNeue Light.2d7491fe233df3ce53e2.ttf",
+    "static/media/HelveticaNeue Medium.ttf": "/static/media/HelveticaNeue Medium.64ab5024acf8e1619abc.ttf",
+    "static/media/HelveticaNeue Bold.ttf": "/static/media/HelveticaNeue Bold.61acdee6f288cddccf23.ttf",
+    "static/media/old-site.png": "/static/media/old-site.d9395fce0d38b48ac37e.png",
+    "index.html": "/index.html",
+    "main.f3b002c8.css.map": "/static/css/main.f3b002c8.css.map",
+    "main.acdd4f5e.js.map": "/static/js/main.acdd4f5e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f3b002c8.css",
+    "static/js/main.acdd4f5e.js"
+  ]
+}
