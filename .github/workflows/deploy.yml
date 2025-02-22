@@ -11,28 +11,34 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4 # Use latest version
 
-      - name: Install Dependencies
+      - name: Install Dependencies (Next.js)
         run: npm install
         working-directory: next
 
       - name: Build New Portfolio (Next.js)
-        run: |
-          npm run build
-          npx next export
+        run: npm run build
         working-directory: next
 
-      - name: Deploy to GitHub Pages
+      - name: Install Dependencies (CRA)
+        run: npm install
+        working-directory: cra
+
+      - name: Build Old Portfolio (CRA)
+        run: npm run build
+        working-directory: cra
+
+      - name: Deploy New Portfolio to Root (alexbao.net)
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: next/out
-          target-folder: . # Deploys to alexbao.net root
+          target-folder: . # Deploys to root
 
-      - name: Deploy Old Site (CRA)
+      - name: Deploy Old Portfolio to /archive (alexbao.net/archive)
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: cra/build
-          target-folder: archive # Deploys to alexbao.net/archive
+          target-folder: archive # Deploys to /archive
