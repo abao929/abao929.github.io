@@ -1,0 +1,38 @@
+name: Deploy Portfolio Sites
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: npm install
+        working-directory: new-site
+
+      - name: Build New Portfolio (Next.js)
+        run: |
+          npm run build
+          npx next export
+        working-directory: new-site
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: new-site/out
+          target-folder: . # Deploys to alexbao.net root
+
+      - name: Deploy Old Site (CRA)
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: old-site/build
+          target-folder: old # Deploys to alexbao.net/old
