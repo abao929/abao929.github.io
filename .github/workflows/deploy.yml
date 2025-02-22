@@ -15,24 +15,24 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
-        working-directory: new-site
+        working-directory: next
 
       - name: Build New Portfolio (Next.js)
         run: |
           npm run build
           npx next export
-        working-directory: new-site
+        working-directory: next
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: new-site/out
+          folder: next/out
           target-folder: . # Deploys to alexbao.net root
 
       - name: Deploy Old Site (CRA)
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: old-site/build
-          target-folder: old # Deploys to alexbao.net/old
+          folder: cra/build
+          target-folder: archive # Deploys to alexbao.net/archive
