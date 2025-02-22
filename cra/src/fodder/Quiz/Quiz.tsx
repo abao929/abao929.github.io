@@ -1,6 +1,6 @@
-import axios from "axios"
-import { useEffect, useState } from "react"
-import styles from "./Quiz.module.sass"
+import axios from 'axios'
+import { useEffect, useState } from 'react'
+import styles from './Quiz.module.sass'
 
 type Question = {
   question: string
@@ -9,7 +9,7 @@ type Question = {
 }
 
 let getQuestions = async () => {
-  return axios.get("./quiz-data.json").then((response) => {
+  return axios.get('./quiz-data.json').then((response) => {
     console.log(response)
     return response.data
   })
@@ -19,18 +19,17 @@ export default function Quiz() {
   const [allQuestions, setAllQuestions] = useState<Question[][]>([])
   const [questions, setQuestions] = useState<Question[]>([])
   const [questionIdx, setQuestionIdx] = useState(0)
-  const [numCorrect, setNumCorrect] = useState(0)
   const [end, setEnd] = useState(false)
 
   const letterMap = new Map<number, string>([
-    [0, "a"],
-    [1, "b"],
-    [2, "c"],
-    [3, "d"],
+    [0, 'a'],
+    [1, 'b'],
+    [2, 'c'],
+    [3, 'd'],
   ])
 
   const checkQuestion = (idx: number, correct: number) => {
-    console.log("answered: %d, correct was %d", idx, correct)
+    console.log('answered: %d, correct was %d', idx, correct)
     if (idx !== correct) {
       setEnd(true)
     }

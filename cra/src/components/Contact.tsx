@@ -96,7 +96,11 @@ export default function Contact() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
         >
-          <a href='https://www.linkedin.com/in/alex-bao/' target='_blank'>
+          <a
+            href='https://www.linkedin.com/in/alex-bao/'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             LinkedIn
           </a>
           <div>The more connections the merrier</div>
@@ -119,6 +123,7 @@ export default function Contact() {
           <a
             href='https://docs.google.com/file/d/1ZrYRPF4IyXtiuhcH4dc8jcnG7tLdQVwEjm9s7L3FJHo/view'
             target='_blank'
+            rel='noopener noreferrer'
           >
             Résumé
           </a>
@@ -133,6 +138,7 @@ export default function Contact() {
           <a
             href='https://github.com/abao929'
             target='_blank'
+            rel='noopener noreferrer'
             className='header'
           >
             GitHub

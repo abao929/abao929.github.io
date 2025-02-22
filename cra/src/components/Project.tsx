@@ -148,7 +148,7 @@ export default function Project({
     <>
       <MouseImage
         src={require(`${img}`)}
-        alt=""
+        alt=''
         className={active && !expanded ? 'active' : ''}
         style={{
           transform: `translate(
@@ -178,15 +178,15 @@ export default function Project({
             height: expanded ? elementRef.current?.['scrollHeight'] : 0,
           }}
         >
-          <div className="image-container">
-            <img src={require(`${img}`)} alt="" />
+          <div className='image-container'>
+            <img src={require(`${img}`)} alt='' />
           </div>
-          <div className="text-container">
-            <div className="year">{year}</div>
-            <div className="description">
+          <div className='text-container'>
+            <div className='year'>{year}</div>
+            <div className='description'>
               <div>{description}</div>
               {link && (
-                <a href={link} target="_blank">
+                <a href={link} target='_blank' rel='noopener noreferrer'>
                   {linkText}
                 </a>
               )}

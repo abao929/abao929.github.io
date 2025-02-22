@@ -37,5 +37,5 @@ export default function Wat({}: Props) {
     renderer.render(scene, camera)
   }
   animate()
-  return <></>
+  return <>fodder</>
 }
