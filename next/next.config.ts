@@ -1,9 +1,8 @@
-import type { NextConfig } from 'next'
-
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // Enables static export
-  distDir: 'out', // Output directory
-  basePath: '', // Ensures it's served at alexbao.net
+  output: 'export',
+  distDir: 'out',
+  basePath: '', // Keep empty if deploying to root domain
 }
 
 export default nextConfig
