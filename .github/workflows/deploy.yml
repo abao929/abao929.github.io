@@ -1,4 +1,4 @@
-name: Deploy Portfolio Sites
+name: Deploy Monorepo Sites
 
 on:
   push:
@@ -11,34 +11,53 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4 # Use latest version
+        uses: actions/checkout@v4
 
-      - name: Install Dependencies (Next.js)
-        run: npm install
-        working-directory: next
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
-      - name: Build New Portfolio (Next.js)
-        run: npm run build
-        working-directory: next
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
 
-      - name: Install Dependencies (CRA)
-        run: npm install
-        working-directory: cra
+      - name: Install Dependencies (Root)
+        run: pnpm install
 
-      - name: Build Old Portfolio (CRA)
-        run: npm run build
-        working-directory: cra
+      # Build and deploy portfolio (root)
+      - name: Build Portfolio
+        run: pnpm --filter portfolio build
+        working-directory: apps/portfolio
 
-      - name: Deploy New Portfolio to Root (alexbao.net)
+      - name: Deploy Portfolio
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: next/out
-          target-folder: . # Deploys to root
+          folder: apps/portfolio/out
+          target-folder: . # Deploy to root
 
-      - name: Deploy Old Portfolio to /archive (alexbao.net/archive)
+      # Build and deploy messaging app
+      - name: Build Messaging App
+        run: pnpm --filter messaging build
+        working-directory: apps/messaging
+
+      - name: Deploy Messaging App
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: cra/build
-          target-folder: archive # Deploys to /archive
+          folder: apps/messaging/out
+          target-folder: messaging # Deploy to /messaging
+
+      # Build and deploy archive
+      - name: Build Archive
+        run: pnpm --filter archive build
+        working-directory: apps/archive
+
+      - name: Deploy Archive
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: apps/archive/build
+          target-folder: archive # Deploy to /archive
