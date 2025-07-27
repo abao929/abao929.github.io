@@ -1,0 +1,49 @@
+$base-size: 1rem;
+$scale-ratio: 1.25;
+
+@function pow($base, $exp) {
+  $result: 1;
+  @if $exp > 0 {
+    @for $i from 1 through $exp {
+      $result: $result * $base;
+    }
+  } @else if $exp < 0 {
+    @for $i from 1 through abs($exp) {
+      $result: $result / $base;
+    }
+  }
+  @return $result;
+}
+
+// 3. Define your scale (h1 largest, body 0, smaller text negative)
+$h1-size: $base-size * pow($scale-ratio, 4); // 1.25^4 = 2.44rem
+$h2-size: $base-size * pow($scale-ratio, 3); // 1.25^3 = 1.95rem
+$h3-size: $base-size * pow($scale-ratio, 2); // 1.25^2 = 1.56rem
+$h4-size: $base-size * pow($scale-ratio, 1); // 1.25^1 = 1.25rem
+$body-size: $base-size * pow($scale-ratio, 0); // 1rem
+$small-size: $base-size * pow($scale-ratio, -1); // 0.8rem
+
+@mixin h1 {
+  font-size: $h1-size;
+  font-weight: 700;
+}
+@mixin h2 {
+  font-size: $h2-size;
+  font-weight: 700;
+}
+@mixin h3 {
+  font-size: $h3-size;
+  font-weight: 600;
+}
+@mixin h4 {
+  font-size: $h4-size;
+  font-weight: 600;
+}
+@mixin body {
+  font-size: $body-size;
+  font-weight: 400;
+}
+@mixin small {
+  font-size: $small-size;
+  font-weight: 400;
+}

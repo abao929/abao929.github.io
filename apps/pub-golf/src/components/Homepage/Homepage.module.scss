@@ -1,0 +1,56 @@
+.section {
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.825), rgba(0, 0, 0, 0.825)),
+    url('/images/hp_hero.jpeg');
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #f0f0f0;
+  position: relative;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 6vw;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 2vw 6vh 2vw;
+}
+
+.title {
+  overflow: hidden;
+  h1,
+  h2 {
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    display: inline-block;
+    transform: scaleY(1.25);
+    line-height: 1;
+  }
+
+  h1 {
+    font-size: 12vw;
+  }
+
+  h2 {
+    font-size: 6.25vw;
+  }
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  h3,
+  h4 {
+    font-weight: 500;
+  }
+  h4 {
+    margin-top: auto;
+  }
+}

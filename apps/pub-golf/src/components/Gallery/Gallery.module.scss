@@ -1,0 +1,13 @@
+.section {
+  width: 100%;
+  background-color: #fff;
+  padding: 5vh 2vw;
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  height: 100%;
+  gap: 24px;
+}

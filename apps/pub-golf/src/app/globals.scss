@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700&family=Roboto:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
+@import './typography.mixin.scss';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hide scrollbar */
+html,
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Roboto', Arial, sans-serif;
+  background: #000;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+.logo,
+.nav {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+h1 {
+  @include h1;
+}
+h2 {
+  @include h2;
+}
+h3 {
+  @include h3;
+}
+h4 {
+  @include h4;
+}
+
+p {
+  font-family: 'Roboto', Arial, sans-serif;
+}
